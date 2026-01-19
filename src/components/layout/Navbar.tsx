@@ -23,16 +23,42 @@ export const Navbar = () => {
   }, []);
 
   const handleNavClick = (href: string): void => {
+    const wasMobileMenuOpen = mobileMenuOpen;
     setMobileMenuOpen(false);
+    
+    const scrollToSection = (): void => {
+      const sectionId = href.substring(1);
+      const element = document.getElementById(sectionId);
+      
+      if (element) {
+        // Get the fixed header height dynamically
+        const header = document.querySelector("header");
+        const headerHeight = header ? header.getBoundingClientRect().height : 80;
+        
+        // Calculate the target scroll position accounting for fixed header
+        const elementPosition = element.getBoundingClientRect().top + window.pageYOffset;
+        const offsetPosition = elementPosition - headerHeight;
+        
+        // Use window.scrollTo for better mobile compatibility with offset
+        window.scrollTo({
+          top: offsetPosition,
+          behavior: "smooth",
+        });
+      }
+    };
+    
     if (window.location.pathname !== "/") {
       navigate("/");
-      setTimeout(() => {
-        const element = document.getElementById(href.substring(1));
-        element?.scrollIntoView({ behavior: "smooth" });
-      }, 100);
+      // Wait for navigation + menu animation if it was open
+      const delay = wasMobileMenuOpen ? 400 : 100;
+      setTimeout(scrollToSection, delay);
     } else {
-      const element = document.getElementById(href.substring(1));
-      element?.scrollIntoView({ behavior: "smooth" });
+      // Wait for menu animation to complete if it was open
+      if (wasMobileMenuOpen) {
+        setTimeout(scrollToSection, 300);
+      } else {
+        scrollToSection();
+      }
     }
   };
 
