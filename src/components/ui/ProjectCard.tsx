@@ -19,19 +19,20 @@ export const ProjectCard = ({ project, onClick }: ProjectCardProps) => {
 
       {project.images.length > 0 && (
         <div className="relative h-48 overflow-hidden">
-        <motion.img
-        src={project.images[0]}
+          <motion.img
+            src={project.images[0]}
             alt={project.name}
-        className="w-full h-full object-cover"
-        initial={{ scale: 1 }}
-        animate={{ scale: 1.05 }}
-        transition={{
-          duration: 10,
-          repeat: Infinity,
-          repeatType: "reverse",
-        }}
-      />
-        
+            className="w-full h-full object-cover"
+            initial={{ scale: 1 }}
+            animate={{ scale: 1.05 }}
+            transition={{
+              duration: 10,
+              repeat: Infinity,
+              repeatType: "reverse",
+            }}
+            loading="lazy"
+            decoding="async"
+          />
           <div className="absolute inset-0 bg-linear-to-t from-secondary-900 via-secondary-900/50 to-transparent" />
         </div>
       )}

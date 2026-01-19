@@ -84,6 +84,8 @@ export const ProjectsSection = () => {
                     repeat: Infinity,
                     repeatType: "reverse",
                   }}
+                  loading="eager"
+                  fetchPriority="high"
                 />
                 <div className="absolute inset-0 bg-linear-to-r from-slate-900/80 to-transparent md:bg-linear-to-t md:from-transparent md:to-transparent" />
 

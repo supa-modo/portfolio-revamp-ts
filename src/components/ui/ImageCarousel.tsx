@@ -1,6 +1,7 @@
 import { useState, useEffect, useRef, useCallback } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { HiChevronLeft, HiChevronRight } from "react-icons/hi";
+import { preloadImage } from "@/utils/imageLoader";
 
 interface ImageCarouselProps {
   images: string[];
@@ -18,24 +19,62 @@ export const ImageCarousel = ({
   const [touchStart, setTouchStart] = useState<number | null>(null);
   const [touchEnd, setTouchEnd] = useState<number | null>(null);
   const autoplayRef = useRef<ReturnType<typeof setInterval> | null>(null);
+  const preloadedImages = useRef<Set<number>>(new Set([0]));
 
   // Minimum swipe distance (in pixels)
   const minSwipeDistance = 50;
 
+  // Preload images in background (non-blocking)
+  const preloadImageInBackground = useCallback((index: number) => {
+    if (preloadedImages.current.has(index) || !images[index]) return;
+    
+    preloadedImages.current.add(index);
+    // Preload in background without blocking UI
+    preloadImage(images[index]).catch(() => {
+      // Silently handle errors - image will load when displayed
+    });
+  }, [images]);
+
+  // Preload adjacent images
+  const preloadAdjacentImages = useCallback((index: number) => {
+    // Preload next image
+    const nextIndex = (index + 1) % images.length;
+    preloadImageInBackground(nextIndex);
+    
+    // Preload previous image
+    const prevIndex = index === 0 ? images.length - 1 : index - 1;
+    preloadImageInBackground(prevIndex);
+  }, [images, preloadImageInBackground]);
+
   // Navigate to next image
   const nextImage = useCallback(() => {
-    setCurrentIndex((prev) => (prev === images.length - 1 ? 0 : prev + 1));
-  }, [images.length]);
+    setCurrentIndex((prev) => {
+      const next = prev === images.length - 1 ? 0 : prev + 1;
+      preloadAdjacentImages(next);
+      return next;
+    });
+  }, [images.length, preloadAdjacentImages]);
 
   // Navigate to previous image
   const prevImage = useCallback(() => {
-    setCurrentIndex((prev) => (prev === 0 ? images.length - 1 : prev - 1));
-  }, [images.length]);
+    setCurrentIndex((prev) => {
+      const prevIndex = prev === 0 ? images.length - 1 : prev - 1;
+      preloadAdjacentImages(prevIndex);
+      return prevIndex;
+    });
+  }, [images.length, preloadAdjacentImages]);
 
   // Go to specific image
   const goToImage = (index: number) => {
     setCurrentIndex(index);
+    preloadAdjacentImages(index);
   };
+
+  // Preload initial and adjacent images
+  useEffect(() => {
+    preloadImageInBackground(0);
+    preloadAdjacentImages(0);
+  }, [preloadImageInBackground, preloadAdjacentImages]);
 
   // Handle autoplay
   useEffect(() => {
@@ -48,7 +87,11 @@ export const ImageCarousel = ({
     }
 
     autoplayRef.current = setInterval(() => {
-      setCurrentIndex((prev) => (prev === images.length - 1 ? 0 : prev + 1));
+      setCurrentIndex((prev) => {
+        const next = prev === images.length - 1 ? 0 : prev + 1;
+        preloadAdjacentImages(next);
+        return next;
+      });
     }, autoplayInterval);
 
     return () => {
@@ -56,7 +99,7 @@ export const ImageCarousel = ({
         clearInterval(autoplayRef.current);
       }
     };
-  }, [currentIndex, isPaused, images.length, autoplayInterval]);
+  }, [isPaused, images.length, autoplayInterval, preloadAdjacentImages]);
 
   // Keyboard navigation
   useEffect(() => {
@@ -129,10 +172,16 @@ export const ImageCarousel = ({
           animate={{ opacity: 1, scale: 1 }}
           exit={{ opacity: 0, scale: 0.98 }}
           transition={{ 
-            duration: 1, 
+            duration: 0.8, 
             ease: [0.25, 0.46, 0.45, 0.94], // Smooth ease-out curve
-            opacity: { duration: 0.7 },
-            scale: { duration: 1 }
+            opacity: { duration: 0.6 },
+            scale: { duration: 0.8 }
+          }}
+          loading="eager"
+          fetchPriority="high"
+          onLoad={() => {
+            // Mark as preloaded when actually loaded
+            preloadedImages.current.add(currentIndex);
           }}
         />
       </AnimatePresence>

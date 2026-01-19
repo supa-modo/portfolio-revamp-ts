@@ -39,7 +39,7 @@ export const Navbar = () => {
   const handleResumeDownload = (): void => {
     const link = document.createElement("a");
     link.href = RESUME_LINK;
-    link.download = "Eddy_Odhiambo_Resume.pdf";
+    link.download = "EddyOdhiambo_Resume.pdf";
     document.body.appendChild(link);
     link.click();
     document.body.removeChild(link);

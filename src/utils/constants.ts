@@ -13,4 +13,4 @@ export const SOCIAL_LINKS = {
   email: "mailto:eddie.oodhiambo@gmail.com",
 } as const;
 
-export const RESUME_LINK = "/Eddy_Odhiambo_Resume.pdf";
+export const RESUME_LINK = "/EddyOdhiambo_Resume.pdf";
