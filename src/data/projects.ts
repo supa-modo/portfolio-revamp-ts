@@ -1,117 +1,136 @@
 import type { Project, ProjectImageMap } from "@/types";
 
 // Import images for internships project
-import eac1 from "../assets/images/eac/eac1.png";
-import eac2 from "../assets/images/eac/eac2.png";
-import eac3 from "../assets/images/eac/eac3.png";
-import eac4 from "../assets/images/eac/eac4.png";
-import eac5 from "../assets/images/eac/eac5.png";
-import eac6 from "../assets/images/eac/eac6.png";
-import eac7 from "../assets/images/eac/eac7.png";
-import eac8 from "../assets/images/eac/eac8.png";
-import eac9 from "../assets/images/eac/eac9.png";
-import eac10 from "../assets/images/eac/eac10.png";
+import eac1 from "../assets/images/eac/eac1.webp";
+import eac2 from "../assets/images/eac/eac2.webp";
+import eac3 from "../assets/images/eac/eac3.webp";
+import eac4 from "../assets/images/eac/eac4.webp";
+import eac5 from "../assets/images/eac/eac5.webp";
+import eac6 from "../assets/images/eac/eac6.webp";
+import eac7 from "../assets/images/eac/eac7.webp";
+
+//import images for inns project
+import inns1 from "../assets/images/inns/inns1.webp";
+import inns2 from "../assets/images/inns/inns2.webp";
+import inns3 from "../assets/images/inns/inns3.webp";
+import inns4 from "../assets/images/inns/inns4.webp";
+import inns5 from "../assets/images/inns/inns5.webp";
+import inns6 from "../assets/images/inns/inns6.webp";
+import inns7 from "../assets/images/inns/inns7.webp";
+import inns8 from "../assets/images/inns/inns8.webp";
+import inns9 from "../assets/images/inns/inns9.webp";
+import inns10 from "../assets/images/inns/inns10.webp";
+
+
+//import images for mwu project
+import mwu1 from "../assets/images/mwu/mwu1.webp";
+import mwu2 from "../assets/images/mwu/mwu2.webp";
+import mwu3 from "../assets/images/mwu/mwu3.webp";
+import mwu4 from "../assets/images/mwu/mwu4.webp";
+import mwu5 from "../assets/images/mwu/mwu5.webp";
+import mwu6 from "../assets/images/mwu/mwu6.webp";
+import mwu7 from "../assets/images/mwu/mwu7.webp";
+import mwu8 from "../assets/images/mwu/mwu8.webp";
 
 // Import images for msafiri project
-import msafiri1 from "../assets/images/msafiri/msafiri1.jpg";
-import msafiri2 from "../assets/images/msafiri/msafiri2.jpg";
-import msafiri3 from "../assets/images/msafiri/msafiri3.jpg";
+import msafiri1 from "../assets/images/msafiri/msafiri1.webp";
+import msafiri2 from "../assets/images/msafiri/msafiri2.webp";
+import msafiri3 from "../assets/images/msafiri/msafiri3.webp";
 
 // Import images from digiplot project
-import digiplot1 from "../assets/images/digiplot/digiplot1.png";
-import digiplot2 from "../assets/images/digiplot/digiplot2.png";
-import digiplot3 from "../assets/images/digiplot/digiplot3.png";
-import digiplot4 from "../assets/images/digiplot/digiplot4.png";
-import digiplot5 from "../assets/images/digiplot/digiplot5.png";
+import digiplot1 from "../assets/images/digiplot/digiplot1.webp";
+import digiplot2 from "../assets/images/digiplot/digiplot2.webp";
+import digiplot3 from "../assets/images/digiplot/digiplot3.webp";
+import digiplot4 from "../assets/images/digiplot/digiplot4.webp";
+import digiplot5 from "../assets/images/digiplot/digiplot5.webp";
 
 // Import images for vuka-wifi project
-import vuka1 from "../assets/images/vuka-wifi/vuka1.png";
-import vuka2 from "../assets/images/vuka-wifi/vuka2.png";
-import vuka3 from "../assets/images/vuka-wifi/vuka3.png";
-import vuka4 from "../assets/images/vuka-wifi/vuka4.png";
-import vuka5 from "../assets/images/vuka-wifi/vuka5.png";
+import vuka1 from "../assets/images/vuka-wifi/vuka1.webp";
+import vuka2 from "../assets/images/vuka-wifi/vuka2.webp";
+import vuka3 from "../assets/images/vuka-wifi/vuka3.webp";
+import vuka4 from "../assets/images/vuka-wifi/vuka4.webp";
+import vuka5 from "../assets/images/vuka-wifi/vuka5.webp";
 
 // Import images for recruitment project
-import jobs1 from "../assets/images/jobs/jobs1.png";
-import jobs2 from "../assets/images/jobs/jobs2.png";
-import jobs3 from "../assets/images/jobs/jobs3.png";
-import jobs4 from "../assets/images/jobs/jobs4.png";
-import jobs5 from "../assets/images/jobs/jobs5.png";
-import jobs6 from "../assets/images/jobs/jobs6.png";
-import jobs7 from "../assets/images/jobs/jobs7.png";
-import jobs8 from "../assets/images/jobs/jobs8.png";
-import jobs9 from "../assets/images/jobs/jobs9.png";
-import jobs02 from "../assets/images/jobs/jobs02.png";
+import jobs1 from "../assets/images/jobs/jobs1.webp";
+import jobs2 from "../assets/images/jobs/jobs2.webp";
+import jobs3 from "../assets/images/jobs/jobs3.webp";
+import jobs4 from "../assets/images/jobs/jobs4.webp";
+import jobs5 from "../assets/images/jobs/jobs5.webp";
+import jobs6 from "../assets/images/jobs/jobs6.webp";
+import jobs7 from "../assets/images/jobs/jobs7.webp";
+import jobs8 from "../assets/images/jobs/jobs8.webp";
+import jobs9 from "../assets/images/jobs/jobs9.webp";
+import jobs02 from "../assets/images/jobs/jobs02.webp";
 
 // Import images for farm project
-import farm1 from "../assets/images/flutter-farm/farm1.jpg";
-import farm2 from "../assets/images/flutter-farm/farm2.jpg";
-import farm3 from "../assets/images/flutter-farm/farm3.jpg";
-import farm4 from "../assets/images/flutter-farm/farm4.jpg";
-import farm5 from "../assets/images/flutter-farm/farm5.jpg";
-import farm6 from "../assets/images/flutter-farm/farm6.jpg";
-import farm7 from "../assets/images/flutter-farm/farm7.jpg";
-import farm8 from "../assets/images/flutter-farm/farm8.jpg";
-import farm9 from "../assets/images/flutter-farm/farm9.jpg";
-import farm10 from "../assets/images/flutter-farm/farm10.jpg";
+import farm1 from "../assets/images/flutter-farm/farm1.webp";
+import farm2 from "../assets/images/flutter-farm/farm2.webp";
+import farm3 from "../assets/images/flutter-farm/farm3.webp";
+import farm4 from "../assets/images/flutter-farm/farm4.webp";
+import farm5 from "../assets/images/flutter-farm/farm5.webp";
+import farm6 from "../assets/images/flutter-farm/farm6.webp";
+import farm7 from "../assets/images/flutter-farm/farm7.webp";
+import farm8 from "../assets/images/flutter-farm/farm8.webp";
+import farm9 from "../assets/images/flutter-farm/farm9.webp";
+import farm10 from "../assets/images/flutter-farm/farm10.webp";
 
 // Import images for lako project
-import lako1 from "../assets/images/lako/lako1.png";
-import lako2 from "../assets/images/lako/lako2.png";
-import lako3 from "../assets/images/lako/lako3.png";
-import lako4 from "../assets/images/lako/lako4.png";
-import lako5 from "../assets/images/lako/lako5.png";
-import lako6 from "../assets/images/lako/lako6.png";
-import lako7 from "../assets/images/lako/lako7.png";
-import lako8 from "../assets/images/lako/lako8.png";
-import lako9 from "../assets/images/lako/lako9.png";
-import lako10 from "../assets/images/lako/lako10.png";
-import lako11 from "../assets/images/lako/lako11.png";
-import lako12 from "../assets/images/lako/lako12.png";
+import lako1 from "../assets/images/lako/lako1.webp";
+import lako2 from "../assets/images/lako/lako2.webp";
+import lako3 from "../assets/images/lako/lako3.webp";
+import lako4 from "../assets/images/lako/lako4.webp";
+import lako5 from "../assets/images/lako/lako5.webp";
+import lako6 from "../assets/images/lako/lako6.webp";
+import lako7 from "../assets/images/lako/lako7.webp";
+import lako8 from "../assets/images/lako/lako8.webp";
+import lako9 from "../assets/images/lako/lako9.webp";
+import lako10 from "../assets/images/lako/lako10.webp";
+import lako11 from "../assets/images/lako/lako11.webp";
+import lako12 from "../assets/images/lako/lako12.webp";
 
 // Import images for eSoko project
-import esoko1 from "../assets/images/esoko/esoko1.png";
-import esoko2 from "../assets/images/esoko/esoko2.png";
-import esoko3 from "../assets/images/esoko/esoko3.png";
-import esoko4 from "../assets/images/esoko/esoko4.png";
-import esoko5 from "../assets/images/esoko/esoko5.png";
-import esoko6 from "../assets/images/esoko/esoko6.png";
-import esoko00 from "../assets/images/esoko/esoko00.png";
-import esoko7 from "../assets/images/esoko/esoko7.png";
-import esoko8 from "../assets/images/esoko/esoko8.png";
-import esoko9 from "../assets/images/esoko/esoko9.png";
-import esoko10 from "../assets/images/esoko/esoko10.png";
-import esoko11 from "../assets/images/esoko/esoko11.png";
-import esoko12 from "../assets/images/esoko/esoko12.png";
-import esoko13 from "../assets/images/esoko/esoko13.png";
-import esoko21 from "../assets/images/esoko/esoko21.png";
+import esoko1 from "../assets/images/esoko/esoko1.webp";
+import esoko2 from "../assets/images/esoko/esoko2.webp";
+import esoko3 from "../assets/images/esoko/esoko3.webp";
+import esoko4 from "../assets/images/esoko/esoko4.webp";
+import esoko5 from "../assets/images/esoko/esoko5.webp";
+import esoko6 from "../assets/images/esoko/esoko6.webp";
+import esoko00 from "../assets/images/esoko/esoko00.webp";
+import esoko7 from "../assets/images/esoko/esoko7.webp";
+import esoko8 from "../assets/images/esoko/esoko8.webp";
+import esoko9 from "../assets/images/esoko/esoko9.webp";
+import esoko10 from "../assets/images/esoko/esoko10.webp";
+import esoko11 from "../assets/images/esoko/esoko11.webp";
+import esoko12 from "../assets/images/esoko/esoko12.webp";
+import esoko13 from "../assets/images/esoko/esoko13.webp";
+import esoko21 from "../assets/images/esoko/esoko21.webp";
 
 // Import images for Elite Fitness project
-import elite1 from "../assets/images/elite-fitness/elite1.png";
-import elite2 from "../assets/images/elite-fitness/elite2.png";
-import elite3 from "../assets/images/elite-fitness/elite3.png";
-import elite4 from "../assets/images/elite-fitness/elite4.png";
-import elite5 from "../assets/images/elite-fitness/elite5.png";
-import elite6 from "../assets/images/elite-fitness/elite6.png";
-import elite7 from "../assets/images/elite-fitness/elite7.png";
-import elite8 from "../assets/images/elite-fitness/elite8.png";
-import elite9 from "../assets/images/elite-fitness/elite9.png";
-import elite10 from "../assets/images/elite-fitness/elite10.png";
-import elite11 from "../assets/images/elite-fitness/elite11.png";
-import elite12 from "../assets/images/elite-fitness/elite12.png";
-import elite13 from "../assets/images/elite-fitness/elite13.png";
-import elite14 from "../assets/images/elite-fitness/elite14.png";
-import elite15 from "../assets/images/elite-fitness/elite15.png";
-import elite16 from "../assets/images/elite-fitness/elite16.png";
-import elite17 from "../assets/images/elite-fitness/elite17.png";
-import elite18 from "../assets/images/elite-fitness/elite18.png";
-import elite19 from "../assets/images/elite-fitness/elite19.png";
-import elite20 from "../assets/images/elite-fitness/elite20.png";
-import elite21 from "../assets/images/elite-fitness/elite21.png";
-import elite22 from "../assets/images/elite-fitness/elite22.png";
-import elite23 from "../assets/images/elite-fitness/elite23.png";
-import elite24 from "../assets/images/elite-fitness/elite24.png";
-import elite25 from "../assets/images/elite-fitness/elite25.png";
+import elite1 from "../assets/images/elite-fitness/elite1.webp";
+import elite2 from "../assets/images/elite-fitness/elite2.webp";
+import elite3 from "../assets/images/elite-fitness/elite3.webp";
+import elite4 from "../assets/images/elite-fitness/elite4.webp";
+import elite5 from "../assets/images/elite-fitness/elite5.webp";
+import elite6 from "../assets/images/elite-fitness/elite6.webp";
+import elite7 from "../assets/images/elite-fitness/elite7.webp";
+import elite8 from "../assets/images/elite-fitness/elite8.webp";
+import elite10 from "../assets/images/elite-fitness/elite10.webp";
+import elite11 from "../assets/images/elite-fitness/elite11.webp";
+import elite12 from "../assets/images/elite-fitness/elite12.webp";
+import elite13 from "../assets/images/elite-fitness/elite13.webp";
+import elite14 from "../assets/images/elite-fitness/elite14.webp";
+import elite15 from "../assets/images/elite-fitness/elite15.webp";
+import elite16 from "../assets/images/elite-fitness/elite16.webp";
+import elite17 from "../assets/images/elite-fitness/elite17.webp";
+import elite18 from "../assets/images/elite-fitness/elite18.webp";
+import elite19 from "../assets/images/elite-fitness/elite19.webp";
+import elite20 from "../assets/images/elite-fitness/elite20.webp";
+import elite21 from "../assets/images/elite-fitness/elite21.webp";
+import elite22 from "../assets/images/elite-fitness/elite22.webp";
+import elite23 from "../assets/images/elite-fitness/elite23.webp";
+import elite24 from "../assets/images/elite-fitness/elite24.webp";
+import elite25 from "../assets/images/elite-fitness/elite25.webp";
 
 // Import images for Ilala College project
 import ilala1 from "../assets/images/ilalaCollege/ilala1.png";
@@ -144,18 +163,18 @@ import meetings10 from "../assets/images/meetingAttendance/meetings10.png";
 import meetings11 from "../assets/images/meetingAttendance/meetings11.png";
 
 // Import images for KMS project
-import kms1 from "../assets/images/kms/kms1.png";
-import kms2 from "../assets/images/kms/kms2.png";
-import kms3 from "../assets/images/kms/kms3.png";
-import kms4 from "../assets/images/kms/kms4.png";
-import kms5 from "../assets/images/kms/kms5.png";
-import kms6 from "../assets/images/kms/kms6.png";
-import kms7 from "../assets/images/kms/kms7.png";
-import kms8 from "../assets/images/kms/kms8.png";
-import kms9 from "../assets/images/kms/kms9.png";
-import kms10 from "../assets/images/kms/kms10.png";
-import kms11 from "../assets/images/kms/kms11.png";
-import kms12 from "../assets/images/kms/kms11.png";
+import kms1 from "../assets/images/kms/kms1.webp";
+import kms2 from "../assets/images/kms/kms2.webp";
+import kms3 from "../assets/images/kms/kms3.webp";
+import kms4 from "../assets/images/kms/kms4.webp";
+import kms5 from "../assets/images/kms/kms5.webp";
+import kms6 from "../assets/images/kms/kms6.webp";
+import kms7 from "../assets/images/kms/kms7.webp";
+import kms8 from "../assets/images/kms/kms8.webp";
+import kms9 from "../assets/images/kms/kms9.webp";
+import kms10 from "../assets/images/kms/kms10.webp";
+import kms11 from "../assets/images/kms/kms11.webp";
+import kms12 from "../assets/images/kms/kms11.webp";
 
 // Import images for rent project
 import rent1 from "../assets/images/rent/rent01.png";
@@ -169,33 +188,32 @@ import rent8 from "../assets/images/rent/rent8.png";
 import rent9 from "../assets/images/rent/rent9.png";
 
 // Import images for HSLive project
-import hslive1 from "../assets/images/hslive/hslive1.png";
-import hslive2 from "../assets/images/hslive/hslive2.png";
-import hslive3 from "../assets/images/hslive/hslive3.png";
-import hslive4 from "../assets/images/hslive/hslive4.png";
-import hslive5 from "../assets/images/hslive/hslive5.png";
-import hslive6 from "../assets/images/hslive/hslive6.png";
-import hslive7 from "../assets/images/hslive/hslive7.png";
-import hslive8 from "../assets/images/hslive/hslive8.png";
-import hslive9 from "../assets/images/hslive/hslive9.png";
-import hslive10 from "../assets/images/hslive/hslive10.png";
-import hslive11 from "../assets/images/hslive/hslive11.png";
-import hslive12 from "../assets/images/hslive/hslive12.png";
-import hslive13 from "../assets/images/hslive/hslive13.png";
-import hslive14 from "../assets/images/hslive/hslive14.png";
-import hslive15 from "../assets/images/hslive/hslive15.png";
-import hslive16 from "../assets/images/hslive/hslive16.png";
-import hslive17 from "../assets/images/hslive/hslive17.png";
-import hslive18 from "../assets/images/hslive/hslive18.png";
-import hslive19 from "../assets/images/hslive/hslive19.png";
-import hslive20 from "../assets/images/hslive/hslive20.png";
-import hslive21 from "../assets/images/hslive/hslive21.png";
-import hslive22 from "../assets/images/hslive/hslive22.png";
-import hslive23 from "../assets/images/hslive/hslive23.png";
-import hslive24 from "../assets/images/hslive/hslive24.png";
-import hslive25 from "../assets/images/hslive/hslive25.png";
-import hslive26 from "../assets/images/hslive/hslive26.png";
-import hslive27 from "../assets/images/hslive/hslive27.png";
+import hslive1 from "../assets/images/hslive/hslive1.webp";
+import hslive2 from "../assets/images/hslive/hslive2.webp";
+import hslive3 from "../assets/images/hslive/hslive3.webp";
+import hslive4 from "../assets/images/hslive/hslive4.webp";
+import hslive5 from "../assets/images/hslive/hslive5.webp";
+import hslive6 from "../assets/images/hslive/hslive6.webp";
+import hslive7 from "../assets/images/hslive/hslive7.webp";
+import hslive8 from "../assets/images/hslive/hslive8.webp";
+import hslive9 from "../assets/images/hslive/hslive9.webp";
+import hslive10 from "../assets/images/hslive/hslive10.webp";
+import hslive11 from "../assets/images/hslive/hslive11.webp";
+import hslive12 from "../assets/images/hslive/hslive12.webp";
+import hslive13 from "../assets/images/hslive/hslive13.webp";
+import hslive14 from "../assets/images/hslive/hslive14.webp";
+import hslive15 from "../assets/images/hslive/hslive15.webp";
+import hslive16 from "../assets/images/hslive/hslive16.webp";
+import hslive17 from "../assets/images/hslive/hslive17.webp";
+import hslive18 from "../assets/images/hslive/hslive18.webp";
+import hslive19 from "../assets/images/hslive/hslive19.webp";
+import hslive20 from "../assets/images/hslive/hslive20.webp";
+import hslive21 from "../assets/images/hslive/hslive21.webp";
+import hslive22 from "../assets/images/hslive/hslive22.webp";
+import hslive23 from "../assets/images/hslive/hslive23.webp";
+import hslive24 from "../assets/images/hslive/hslive24.webp";
+import hslive25 from "../assets/images/hslive/hslive25.webp";
+import hslive26 from "../assets/images/hslive/hslive26.webp";
 
 // Import images for Welfare project
 import welfare1 from "../assets/images/welfare/welfare1.png";
@@ -237,18 +255,18 @@ import teflex13 from "../assets/images/teflex/teflex13.png";
 import teflex14 from "../assets/images/teflex/teflex14.png";
 
 // Import images for financeFlow project
-import financeFlow1 from "../assets/images/financeFlow/fin3.png";
-import financeFlow2 from "../assets/images/financeFlow/fin2.png";
-import financeFlow3 from "../assets/images/financeFlow/fin1.png";
-import financeFlow4 from "../assets/images/financeFlow/fin4.png";
-import financeFlow5 from "../assets/images/financeFlow/fin5.png";
-import financeFlow6 from "../assets/images/financeFlow/fin6.png";
-import financeFlow7 from "../assets/images/financeFlow/fin7.png";
-import financeFlow8 from "../assets/images/financeFlow/fin8.png";
-import financeFlow9 from "../assets/images/financeFlow/fin9.png";
-import financeFlow10 from "../assets/images/financeFlow/fin10.png";
-import financeFlow11 from "../assets/images/financeFlow/fin11.png";
-import financeFlow12 from "../assets/images/financeFlow/fin12.png";
+import financeFlow1 from "../assets/images/financeFlow/fin3.webp";
+import financeFlow2 from "../assets/images/financeFlow/fin2.webp";
+import financeFlow3 from "../assets/images/financeFlow/fin1.webp";
+import financeFlow4 from "../assets/images/financeFlow/fin4.webp";
+import financeFlow5 from "../assets/images/financeFlow/fin5.webp";
+import financeFlow6 from "../assets/images/financeFlow/fin6.webp";
+import financeFlow7 from "../assets/images/financeFlow/fin7.webp";
+import financeFlow8 from "../assets/images/financeFlow/fin8.webp";
+import financeFlow9 from "../assets/images/financeFlow/fin9.webp";
+import financeFlow10 from "../assets/images/financeFlow/fin10.webp";
+import financeFlow11 from "../assets/images/financeFlow/fin11.webp";
+import financeFlow12 from "../assets/images/financeFlow/fin12.webp";
 
 // Project images map
 const projectImages: ProjectImageMap = {
@@ -314,6 +332,8 @@ const projectImages: ProjectImageMap = {
     kms12,
   ],
   vuka: [vuka1, vuka2, vuka3, vuka4, vuka5],
+  inns: [inns1, inns2, inns3, inns4, inns5, inns6, inns7, inns8, inns9, inns10],
+  mwu: [mwu1, mwu2, mwu3, mwu4, mwu5, mwu6, mwu7, mwu8],
   digiplot: [digiplot1, digiplot2, digiplot3, digiplot4, digiplot5],
   lako: [
     lako1,
@@ -329,7 +349,7 @@ const projectImages: ProjectImageMap = {
     lako11,
     lako12,
   ],
-  eac: [eac1, eac2, eac3, eac4, eac5, eac6, eac7, eac8, eac9, eac10],
+  eac: [eac1, eac2, eac3, eac4, eac5, eac6, eac7],
   jobs: [jobs1, jobs02, jobs2, jobs3, jobs4, jobs5, jobs6, jobs7, jobs8, jobs9],
   elite: [
     elite1,
@@ -346,7 +366,6 @@ const projectImages: ProjectImageMap = {
     elite6,
     elite7,
     elite8,
-    elite9,
     elite16,
     elite17,
     elite18,
@@ -388,7 +407,6 @@ const projectImages: ProjectImageMap = {
     hslive24,
     hslive25,
     hslive26,
-    hslive27,
   ],
   welfare: [
     welfare1,
@@ -456,6 +474,32 @@ export const projects: Project[] = [
     githubLink: "https://github.com/supa-modo/vuka-wifi-billing-system",
     liveLink: "https://vuka-wifi.vercel.app/",
   },
+  {
+    
+    name: "Innovasure Micro-Insurance Platform",
+    description:
+      "Enterprise micro-insurance platform enabling end-to-end policy and payment lifecycle management. Delivers agent and member portals, M-Pesa (Daraja) integration, USSD and SMS (Africa's Talking), automated commission calculation, bulk payouts, and reconciliation workflows. Role-based access control and background job processing support operations at scale; document storage and PII handling use AWS S3 and KMS.",
+    tags: ["React", "TypeScript", "Vite", "TailwindCSS", "Framer Motion", "Recharts", "Leaflet", "Node.js", "Express", "Sequelize", "PostgreSQL", "Redis", "BullMQ", "Daraja Mpesa", "AWS S3"],
+    images: projectImages.inns,
+    liveLink: "https://innovasure.co.ke",
+  },
+  {
+    name: "Matatu Workers Union (MWU) Portal",
+    description:
+      "Member registry and administration portal for the Matatu Workers Union, integrated with Innovasure for insurance offerings. Supports member onboarding, subscription management, and STK push premium payments via the Innovasure API. Admin workflows cover member data, payments, and communications for union operations.",
+    tags: ["React", "TypeScript", "Vite", "TailwindCSS", "Framer Motion", "Node.js", "Express", "Sequelize", "PostgreSQL", "JWT", "Innovasure API"],
+    images: projectImages.mwu,
+    liveLink: "https://mwukenya.co.ke",
+  },
+  {
+    name: "Payroll & Expense Management System",
+    description:
+      "Multi-tenant payroll and expense platform for organizations to manage departments, employees, and compensation. Handles salary components, Kenyan statutory deductions (PAYE, NSSF, NHIF), payroll runs, employee loans, expense claims, and tax remittance reporting. Built for clarity, auditability, and compliance.",
+    tags: ["React", "TypeScript", "Vite", "TailwindCSS", "Recharts", "Node.js", "Express", "Sequelize", "PostgreSQL", "JWT", "BullMQ", "Redis", "Socket.io"],
+    images: [],
+    liveLink: "https://payroll-v2.vercel.app",
+  },
+  
   {
     name: "Digiplot Property Management",
     description:
