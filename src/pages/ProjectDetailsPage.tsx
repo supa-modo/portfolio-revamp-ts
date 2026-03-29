@@ -6,6 +6,11 @@ import { HiExternalLink } from "react-icons/hi";
 import { findProjectBySlug } from "@/utils/slug";
 import { ImageCarousel } from "@/components/ui/ImageCarousel";
 import { Badge } from "@/components/ui/Badge";
+import { JsonLd } from "@/components/seo/JsonLd";
+import {
+  buildProjectBreadcrumbSchema,
+  buildProjectWorkSchema,
+} from "@/components/seo/schemas";
 
 export const ProjectDetailsPage = () => {
   const { slug } = useParams<{ slug: string }>();
@@ -48,8 +53,10 @@ export const ProjectDetailsPage = () => {
 
   return (
     <div className="min-h-screen bg-secondary-900">
+      <JsonLd data={buildProjectBreadcrumbSchema(project, slug)} />
+      <JsonLd data={buildProjectWorkSchema(project, slug)} />
       {/* Hero Carousel Section - Full Width, Starts from Navbar */}
-      {project.images.length > 0 && (
+      {project.images.length > 0 ? (
         <div className="relative w-full h-[50vh] lg:h-[80vh] -mt-16">
           <ImageCarousel images={project.images} projectName={project.name} />
           {/* Project Name Overlay - Bottom Left */}
@@ -64,6 +71,12 @@ export const ProjectDetailsPage = () => {
               {project.name}
             </h1>
           </motion.div>
+        </div>
+      ) : (
+        <div className="pt-20 px-4 lg:px-20">
+          <h1 className="text-2xl md:text-3xl lg:text-4xl font-extrabold text-white">
+            {project.name}
+          </h1>
         </div>
       )}
 

@@ -1,15 +1,15 @@
 import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import { Link, useNavigate } from "react-router-dom";
+import { Link } from "react-router-dom";
 import { projects } from "@/data/projects";
 import { ProjectCard } from "@/components/ui/ProjectCard";
-import { Project } from "@/types";
 import { TbArrowLeft } from "react-icons/tb";
 import { HiChevronDown, HiChevronUp } from "react-icons/hi";
 import { getProjectSlug } from "@/utils/slug";
+import { JsonLd } from "@/components/seo/JsonLd";
+import { buildProjectsItemListSchema } from "@/components/seo/schemas";
 
 export const AllProjectsPage = () => {
-  const navigate = useNavigate();
   const [filter, setFilter] = useState("All");
   const [showAllFilters, setShowAllFilters] = useState(false);
   const [isLargeScreen, setIsLargeScreen] = useState(false);
@@ -39,13 +39,9 @@ export const AllProjectsPage = () => {
     : (showAllFilters ? allTags : allTags.slice(0, initialTagCount));
   const hasMoreTags = !isLargeScreen && allTags.length > initialTagCount;
 
-  const handleProjectClick = (project: Project): void => {
-    const slug = getProjectSlug(project);
-    navigate(`/projects/${slug}`);
-  };
-
   return (
     <div className="min-h-screen pt-16 bg-secondary-900">
+      <JsonLd data={buildProjectsItemListSchema()} />
       <div className="lg:px-36 mx-auto px-2 pb-12 pt-4 lg:py-12">
         {/* Header */}
         <div className="px-2 lg:px-0 mb-4 lg:mb-8">
@@ -120,10 +116,12 @@ export const AllProjectsPage = () => {
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5, delay: index * 0.05 }}
             >
-              <ProjectCard
-                project={project}
-                onClick={() => handleProjectClick(project)}
-              />
+              <Link
+                to={`/projects/${getProjectSlug(project)}`}
+                className="block focus:outline-none focus-visible:ring-2 focus-visible:ring-primary-400 rounded-3xl"
+              >
+                <ProjectCard project={project} />
+              </Link>
             </motion.div>
           ))}
         </div>

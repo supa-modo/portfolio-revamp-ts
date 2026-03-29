@@ -6,15 +6,11 @@ import { motion } from "framer-motion";
 
 interface ProjectCardProps {
   project: Project;
-  onClick?: () => void;
 }
 
-export const ProjectCard = ({ project, onClick }: ProjectCardProps) => {
+export const ProjectCard = ({ project }: ProjectCardProps) => {
   return (
-    <div
-      className="group relative overflow-hidden rounded-3xl border border-secondary-700/30 bg-secondary-900/50 backdrop-blur-sm transition-colors duration-500 hover:border-primary-500/50 hover:shadow-lg hover:shadow-primary-500/10 cursor-pointer"
-      onClick={onClick}
-    >
+    <div className="group relative overflow-hidden rounded-3xl border border-secondary-700/30 bg-secondary-900/50 backdrop-blur-sm transition-colors duration-500 hover:border-primary-500/50 hover:shadow-lg hover:shadow-primary-500/10">
       {/* Project Image */}
 
       {project.images.length > 0 && (

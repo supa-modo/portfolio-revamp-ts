@@ -5,6 +5,7 @@ import { FaGithub, FaLinkedin, FaWhatsapp } from "react-icons/fa";
 import { HiArrowUp } from "react-icons/hi";
 import { TbMailFilled } from "react-icons/tb";
 import { SOCIAL_LINKS, NAV_ITEMS } from "@/utils/constants";
+import { SITE } from "@/config/site";
 import { Card } from "../ui/Card";
 import { LuCopyright } from "react-icons/lu";
 
@@ -26,7 +27,7 @@ export const Footer = () => {
       from_name: name,
       from_email: email,
       message: message,
-      to_name: "Eddy Odhiambo",
+      to_name: SITE.personName,
     };
 
     const serviceId = import.meta.env.VITE_EMAILJS_SERVICE_ID || "default_service";
@@ -74,12 +75,16 @@ export const Footer = () => {
           <div className="lg:col-span-4 space-y-4">
             <div className="flex items-center gap-3">
               <div className="w-12 h-10 rounded-xl overflow-hidden">
-                <img src="/logo.gif" alt="logo" className="w-full h-full object-cover" />
+                <img
+                  src="/logo.gif"
+                  alt="Eddy Ochieng Odhiambo logo"
+                  className="w-full h-full object-cover"
+                />
               </div>
               <h3 className="text-xl font-bold gradient-text">Eddy Ochieng Odhiambo</h3>
             </div>
             <p className="text-secondary-400 text-sm max-w-md">
-              Fullstack Developer passionate about crafting modern web and mobile applications with clean code and exceptional user experiences.
+              Full-stack developer in Nairobi, Kenya — available for freelance and contract work. I build full modern enterprise grade web and mobile apps with clean code and great user experiences.
             </p>
             <div className="space-y-2 text-sm">
               <a

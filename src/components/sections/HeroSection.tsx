@@ -7,12 +7,10 @@ import { SiRedis, SiAmazon, SiPostgresql, SiNodedotjs, SiTypescript } from "reac
 import { PiCodeDuotone, PiCodeBold } from "react-icons/pi";
 import { Button } from "../ui/Button";
 import { SOCIAL_LINKS } from "@/utils/constants";
-import { useNavigate } from "react-router-dom";
+import { Link } from "react-router-dom";
 import { projects } from "@/data/projects";
 
 export const HeroSection = () => {
-  const navigate = useNavigate();
-
   return (
     <section
       id="home"
@@ -143,13 +141,13 @@ export const HeroSection = () => {
 
             {/* CTA Buttons */}
             <div className="flex flex-col lg:flex-row gap-2 lg:gap-4 pt-1 lg:pt-3">
-              <Button
-                onClick={() => navigate("/projects")}
-                className="px-8 lg:px-10 flex rounded-xl items-center justify-center gap-2"
+              <Link
+                to="/projects"
+                className="px-8 lg:px-10 py-3 rounded-xl flex items-center justify-center gap-2 font-medium transition-colors bg-primary-600 text-white hover:bg-primary-700"
               >
                 Explore My Projects
                 <HiArrowRight className="h-5 w-5" />
-              </Button>
+              </Link>
               <Button
               className="rounded-xl px-8"
                 variant="outline"
@@ -381,14 +379,14 @@ const TerminalContent = () => {
     { type: "output", text: '  "frontend": ["React", "TypeScript", "TailwindCSS"],', delay: 1400, color: "text-emerald-400" },
     { type: "output", text: '  "backend": ["Node.js", "Express", "PostgreSQL"],', delay: 1600, color: "text-blue-400" },
     { type: "output", text: '  "mobile": ["React Native", "Flutter"],', delay: 1800, color: "text-purple-400" },
-    { type: "output", text: '  "cloud": ["AWS", "Azure", "Docker, GitHub Actions"]', delay: 2000, color: "text-orange-400" },
+    { type: "output", text: '  "cloud": ["AWS", "Azure", "Digital Ocean, GitHub Actions"]', delay: 2000, color: "text-orange-400" },
     { type: "output", text: "}", delay: 2200, color: "text-slate-400" },
     { type: "empty", delay: 2400 },
     { type: "command", text: "echo $STATUS", delay: 2600 },
-    { type: "output", text: "✨ We can ship amazing solutions together. I'm free", delay: 2800, color: "text-green-400" },
+    { type: "output", text: "✨ Let's ship amazing solutions together. Hit me Up!", delay: 2800, color: "text-green-400" },
     { type: "empty", delay: 3000 },
     { type: "command", text: "ls projects/ | wc -l", delay: 3200 },
-    { type: "output", text: "25+ production apps shipped", delay: 3400, color: "text-yellow-400" },
+    { type: "output", text: "25+ enterprise grade solutions shipped", delay: 3400, color: "text-yellow-400" },
   ];
 
   useEffect(() => {

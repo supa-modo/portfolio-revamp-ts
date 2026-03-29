@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import { useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { motion, AnimatePresence } from "framer-motion";
 import { HiMenu, HiX } from "react-icons/hi";
 import { TbDownload } from "react-icons/tb";
@@ -82,21 +82,21 @@ export const Navbar = () => {
       <div className="mx-auto px-4 md:px-6 lg:px-12">
         <div className="flex h-16 md:h-20 items-center justify-between">
           {/* Logo */}
-          <div
-            className="flex items-center gap-3 cursor-pointer"
-            onClick={() => navigate("/")}
+          <Link
+            to="/"
+            className="flex items-center gap-3 cursor-pointer rounded-lg focus:outline-none focus-visible:ring-2 focus-visible:ring-primary-400"
           >
             <div className="w-12 h-9 md:w-16 md:h-12 rounded-lg overflow-hidden">
               <img
                 src="/logo.gif"
-                alt="logo"
+                alt="Eddy Ochieng Odhiambo logo"
                 className="w-full h-full object-cover"
               />
             </div>
             <span className="text-lg lg:text-xl font-bold gradient-text">
-              Eddy Odhiambo
+              Eddy Ochieng Odhiambo
             </span>
-          </div>
+          </Link>
 
           {/* Desktop Navigation */}
           <nav className="hidden lg:flex items-center gap-1">

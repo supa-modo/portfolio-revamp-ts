@@ -5,15 +5,15 @@ import { HiArrowRight, HiChevronLeft, HiChevronRight } from "react-icons/hi";
 import { FaGithub } from "react-icons/fa";
 import { PiLinkDuotone } from "react-icons/pi";
 import { projects } from "@/data/projects";
+import { getProjectSlug } from "@/utils/slug";
 // import { ProjectCard } from "../ui/ProjectCard";
 import { useIntersectionObserver } from "@/hooks/useIntersectionObserver";
-import { useNavigate } from "react-router-dom";
+import { Link } from "react-router-dom";
 
 export const ProjectsSection = () => {
   const [ref, isVisible] = useIntersectionObserver({ threshold: 0.1, triggerOnce: true });
   const [featuredRef, isFeaturedVisible] = useIntersectionObserver({ threshold: 0.2, triggerOnce: false });
   const [activeProject, setActiveProject] = useState(0);
-  const navigate = useNavigate();
   // const featuredProjects = projects.slice(0, 6);
 
   // Next and previous project handlers
@@ -154,11 +154,17 @@ export const ProjectsSection = () => {
 
                 {/* Project links */}
                 <motion.div
-                  className="flex gap-4"
+                  className="flex flex-wrap gap-4"
                   initial={{ opacity: 0 }}
                   animate={{ opacity: 1 }}
                   transition={{ duration: 0.5, delay: 0.4 }}
                 >
+                  <Link
+                    to={`/projects/${getProjectSlug(projects[activeProject])}`}
+                    className="flex items-center gap-2 md:px-5 px-4 md:py-2 py-1.5 text-xs lg:text-sm font-medium rounded-lg border border-indigo-400/40 text-indigo-200 hover:bg-indigo-500/10 transition-all duration-300"
+                  >
+                    Case study on this site
+                  </Link>
                   {projects[activeProject].githubLink && (
                     <a
                       href={projects[activeProject].githubLink}
@@ -190,13 +196,13 @@ export const ProjectsSection = () => {
         
 
         <div className="flex justify-center">
-          <button
-            onClick={() => navigate("/projects")}
-            className="w-full lg:w-auto flex items-center justify-center text-sm lg:text-base font-semibold gap-2  bg-linear-to-r from-slate-600 via-slate-500 to-slate-700 text-white hover:from-primary-600 hover:via-accent-600 hover:to-accent-700 px-8 py-3 rounded-xl transition-all duration-300"
+          <Link
+            to="/projects"
+            className="w-full lg:w-auto flex items-center justify-center text-sm lg:text-base font-semibold gap-2 bg-linear-to-r from-slate-600 via-slate-500 to-slate-700 text-white hover:from-primary-600 hover:via-accent-600 hover:to-accent-700 px-8 py-3 rounded-xl transition-all duration-300"
           >
             Go to All Projects Page
             <HiArrowRight className="h-5 w-5" />
-          </button>
+          </Link>
         </div>
       </div>
     </section>
