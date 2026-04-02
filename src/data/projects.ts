@@ -1,5 +1,8 @@
 import type { Project, ProjectImageMap } from "@/types";
 
+//import images for payroll project
+import payroll1 from "../assets/images/payroll/payroll1.webp";
+
 // Import images for internships project
 import eac1 from "../assets/images/eac/eac1.webp";
 import eac2 from "../assets/images/eac/eac2.webp";
@@ -349,6 +352,7 @@ const projectImages: ProjectImageMap = {
     lako11,
     lako12,
   ],
+  payroll: [payroll1],
   eac: [eac1, eac2, eac3, eac4, eac5, eac6, eac7],
   jobs: [jobs1, jobs02, jobs2, jobs3, jobs4, jobs5, jobs6, jobs7, jobs8, jobs9],
   elite: [
@@ -496,7 +500,7 @@ export const projects: Project[] = [
     description:
       "Multi-tenant payroll and expense platform for organizations to manage departments, employees, and compensation. Handles salary components, Kenyan statutory deductions (PAYE, NSSF, NHIF), payroll runs, employee loans, expense claims, and tax remittance reporting. Built for clarity, auditability, and compliance.",
     tags: ["React", "TypeScript", "Vite", "TailwindCSS", "Recharts", "Node.js", "Express", "Sequelize", "PostgreSQL", "JWT", "BullMQ", "Redis", "Socket.io"],
-    images: [],
+    images: projectImages.payroll,
     liveLink: "https://payroll-v2.vercel.app",
   },
   
