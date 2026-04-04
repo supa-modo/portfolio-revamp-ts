@@ -1,6 +1,8 @@
 # Portfolio Website - TypeScript Version
 
-A modern, type-safe portfolio website built with React, TypeScript, and TailwindCSS V4.
+A modern, type-safe portfolio website built with React, TypeScript, and TailwindCSS V4. Accessible on - https://eddy.odhiambo.vercel.app
+![portfolio](https://github.com/user-attachments/assets/9a80ae40-cbfa-4a37-b7ba-88d85cf37d15)
+
 
 ## Features
 
